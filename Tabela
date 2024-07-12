@@ -1,0 +1,43 @@
+CREATE OR REPLACE TABLE
+  `br-apps-intelig-comercial-prd.ecomm_ops.TORRE_DE_CONTROLE` AS
+SELECT 
+  a11.dia,
+  a11.loja,
+  a11.dia_cria,
+  a11.janela,
+  a11.cod_store,
+  a11.env,
+  a11.cliente,
+  a11.pedido,
+  a11.modalidade,
+  a11.canal,
+  a11.plataforma,
+  a11.tipo_entrega,
+  a11.LT_entrega,
+  a11.id_sist_pagamento,
+  a11.sist_pagamento,
+  a11.grupo_pagamento,
+  a11.tipo_subst,
+  a11.gmv,
+  a11.gmv_capt,
+  a11.gmv_promo,
+  a11.IPC_pre,
+  a11.IPC_pos,
+  a11.SLA_sep,
+  a11.cancelado,
+  a11.onTime,
+  a11.IPP,
+  a11.formato,
+  a11.bandeira,
+  a11.nome_loja,
+  a11.regional,
+  a11.onda_conversao,
+  a11.centralizacao,
+  a11.conversao,
+  a11.insert_date,
+  a11.hr_fatura,
+  a11.qtd_sku
+FROM
+  `br-cg-dadoscorporativos-prd.db_operacoes.tbl_IPP` AS a11
+GROUP BY
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36;
