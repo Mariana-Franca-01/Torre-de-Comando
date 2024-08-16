@@ -41,8 +41,17 @@ SELECT
   a11.conversao,
   a11.insert_date,
   a11.hr_fatura,
-  a11.qtd_sku
+  a11.qtd_sku,
+  a12.ESPECIALISTA,
+  a13.NPS_Entrega,
+  a14.NPS_Entrega AS NPS_Hiper
 FROM
   `br-cg-dadoscorporativos-prd.db_operacoes.tbl_IPP` AS a11
+LEFT JOIN `br-apps-analytics-eng-prd.db_da_rep_ops.D_DE_PARA_LOJA_JANIS_MAT` AS a12
+  ON a11.nome_loja = a12.NOME_FANTASIA
+LEFT JOIN `br-apps-analytics-eng-prd.db_da_rep_supply.relatorio_sams_ecommerce_rep` AS a13 
+  ON a13.numbercommand_valeur = substr(ecommerceId,0,strpos(ecommerceid,'-')-1)
+LEFT JOIN `br-apps-analytics-eng-prd.db_da_rep_supply.relatorio_ecommerce_alimentar_rep` AS a14
+  ON a11.pedido = a14.Num_Pedido
 GROUP BY
-  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41;
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44;
