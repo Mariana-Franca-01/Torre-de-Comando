@@ -44,7 +44,11 @@ SELECT
   a11.qtd_sku,
   a12.ESPECIALISTA,
   a13.NPS_Entrega,
+  a13.Verbatim_NPS_Entrega,
+  a13.Verbatim_NPS_Pedido,
   a14.NPS_Entrega AS NPS_Hiper,
+  a14.Verbatim_Entrega,
+  a14.Verbatim_Pedido,
   a15.items_name,
   a15.shipping_logistic_shippingWindowStart,
   a15.invoiceData_invoices_dateModified,
@@ -72,4 +76,4 @@ LEFT JOIN `br-apps-dolphin-ddp-prd.db_dolphin_datasharing_janis.tbl_janis_orders
 LEFT JOIN `br-cg-dadoscorporativos-prd.db_operacoes.tbl_cancelamento_sistemico` AS a17
   ON a11.ecommerceId = a17.orderCode
 GROUP BY
-  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56;
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60;
