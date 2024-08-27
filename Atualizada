@@ -60,7 +60,8 @@ SELECT
   a15.data_status,
   a16.status_description,
   a16.status_id,
-  a17.orderCode
+  a17.orderCode,
+  a18.ID_Pickers
 FROM
   `br-cg-dadoscorporativos-prd.db_operacoes.tbl_IPP` AS a11
 LEFT JOIN `br-apps-analytics-eng-prd.db_da_rep_ops.D_DE_PARA_LOJA_JANIS_MAT` AS a12
@@ -75,5 +76,7 @@ LEFT JOIN `br-apps-dolphin-ddp-prd.db_dolphin_datasharing_janis.tbl_janis_orders
   ON a11.ecommerceId = a16.ecommerceId
 LEFT JOIN `br-cg-dadoscorporativos-prd.db_operacoes.tbl_cancelamento_sistemico` AS a17
   ON a11.ecommerceId = a17.orderCode
+LEFT JOIN `br-cg-dadoscorporativos-prd.db_operacoes.tbl_sat_cap_efet` AS a18
+  ON a11.nome_loja = a18.NOME_FANTASIA
 GROUP BY
-  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60;
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61;
